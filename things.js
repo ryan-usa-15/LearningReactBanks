@@ -285,6 +285,81 @@ const log = value => console.log(value);
 countdown(10, log);
 
 
+////////// #3 curry , hold value 
+
+const userLogs = userName => message => 
+    console.log(`${userName} -> ${message}`);
+
+const log2 = userLogs("grandpa23")
+
+log2("attempted to hack the president")
+log2("attempted to take out the Kremlin")
+log2("successfully launched moon bus ")
 
 
+/////////// #4 reduce remove doubles
+const colors2 = ["red", "red", "green", "blue", "green"]
+const uniqueColors = colors2.reduce(
+    (unique, color)=>
+        unique.indexOf(color ) !== -1 ? unique: 
+            [...unique, color],
+    []
+);
+
+console.log(uniqueColors)
+
+
+/////////// #5 object into an array 
+const schools2 = {
+    Yorktown: 10, 
+    "Washington & Liberty": 2,
+    Wakefield: 5
+}
+
+const schoolArray2 = Object.keys(schools2)
+    .map(key => 
+        ({
+            name: key, 
+            wins: schools2[key]
+        })
+);
+
+console.log(schoolArray2)
+
+/////////////// #6 Array filter method 
+const schools3 = [
+    "Yorktown",
+    "Washington & Liberty",
+    "Wakefield"
+]
+
+const cutSchool = function(cut, list){
+   
+
+    //console.log(list)
+    //console.log(Array.isArray(list))
+
+   return list.filter(school => school !== cut)
+
+}
+
+console.log(cutSchool("Washington & Liberty", schools3).join(", "));
+
+
+///////////// #7 reduce to find max value 
+
+const nums = [23,345,456,877,4334,124,623,85,97,53,25,9,3];
+
+const maxNum = nums.reduce(
+    (max, age) => 
+    {
+        if(age > max){
+            return age
+        }else{
+            return max;
+        }
+    }, 0
+);
+
+console.log(maxNum);
 
