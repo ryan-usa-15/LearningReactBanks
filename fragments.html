@@ -1,0 +1,75 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <meta charset="utf-8" />
+        <title> React Samples</title>
+    </head>
+    <body>
+        <!-- target container-->
+         <div id="root"></div>
+
+         <!-- react library & react DOM (development version)-->
+
+<script
+src="https://unpkg.com/react@16.8.6/umd/react.development.js">
+</script>
+<script
+src="https://unpkg.com/react-dom@16.8.6/umd/react-dom.development.js">
+</script>
+<script
+src="https://unpkg.com/@babel/standalone/babel.min.js">
+</script>
+
+
+
+
+
+<script type="text/babel">
+
+// #11 react fragments with React.Fragment and <> 
+
+
+function Cat({name}){
+    return  (
+        <React.Fragment>
+            <h1> The cat's name is {name} </h1>
+            <p> He's good.</p>
+        </React.Fragment>
+    );
+}
+
+function CatTwo({name}){
+    return  (
+        <>
+            <h1> The cat's name is {name} </h1>
+            <p> He's good.</p>
+        </>
+    );
+}
+
+
+function CatOwner({name}){
+    return  (
+        <>
+            <Cat name="Jungle" />
+            <CatTwo name="Ocean" />
+        </>
+    );
+}
+
+ReactDOM.render(<CatOwner  />, document.getElementById("root"))
+
+        </script>
+    </body>
+
+</html>
+
+
+
+
+
+
+
+
+
+

@@ -2,6 +2,9 @@
 
 
 
+#11 fragments.html
+react fragments with React.Fragment and <> 
+
 #10 recipes.html
 recipes basic components and passing data with props and destructuring
 
